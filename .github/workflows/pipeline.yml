@@ -29,7 +29,7 @@ jobs:
     - run: aws s3 cp index.html s3://$BUCKET_S3_HOMOLOG --recursive --acl public-read
         
   deploy-prod:
-    if: "contains(github.event.head_commit.message,'[deploy]')"
+    if: "contains(github.event.head_commit.message,'[prod]')"
     runs-on: ubuntu-latest
     needs: build
     env:
